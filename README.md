@@ -8,7 +8,7 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
 Add Implementation details of the raw script
 
 ## Docker 
-Add Implementation details for Docker
+Coming Soon
 
 ## OurDataset
 For generating our dataset we used 11 videos from the UVG dataset. The videos selected are
