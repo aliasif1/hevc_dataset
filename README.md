@@ -149,7 +149,11 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
 
 
 # OurDataset
-For generating our dataset we used 11 videos from the UVG dataset. The videos selected are
+For generating our dataset we used 11 videos from the UVG dataset [here](http://ultravideo.fi/#testsequences).
+
+Citation "A. Mercat, M. Viitanen, and J. Vanne, “UVG dataset: 50/120fps 4K sequences for video codec analysis and development,” in Proc. ACM Multimedia Syst. Conf., Istanbul, Turkey, June 2020."
+
+The videos selected are:
 |     Video    |    Creator   | Resolution | FPS | Bitrate (kbps) |   Codec   | Duration (Seconds) | # 1 Second  Segments  | # 2 Second  Segments  |
 |:------------:|:------------:|:----------:|:---:|:--------------:|:---------:|:------------------:|:---------------------:|:---------------------:|
 |    Jockey    | UVG Dataset  |  3840x2160 |  30 |     2985985    | YUV 4:2:0 |         20         |           20          |           10          |
