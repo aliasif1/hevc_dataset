@@ -4,8 +4,77 @@ The dataset is availabe [here](https://drive.google.com/drive/folders/1PHBWy-Gq6
 # HEVC Dataset
 This repository contains the HEVC dataset comprising of 1 second and 2 second long segments (suitable for low latency applications) as well as the tool to generate HEVC encoded segments using CRF as the rate control mode. 
 
+## Requiremnet
+- Python (3.6 or higher)
+- FFmpeg 
+- FFmpeg Quality Metrics (https://github.com/slhck/ffmpeg-quality-metrics.git)
+- SITI (Spatial Information / Temporal Information) (https://github.com/slhck/siti.git)
+
 ## Raw Scripts
-Add Implementation details of the raw script
+- `script.py` (Main Script)
+- `config.py` (Configuration)
+
+## Usage
+- configuration File (`config.py`) - The Configuration file contains the transcoding parameters. Please update the paths and the parameters in the config file before executing the script. 
+    ```
+    # List of Video Dictionery 
+    # Each Dictionery is a y4m Video which needs to be segmented and converted to HEVC 
+    videos = [
+        {
+            'name':'twilight3', # What name the segments should be.
+            'path': '/home/ubuntu/Documents/VideosDataset/Twilight_3840x2160_50fps_420_8bit_YUV_RAW/Twilight_3840x2160_50fps_8bit.y4m', # Absolute path of the video file
+            'resolution': '3840x2160' # Resolution of the video
+        },
+    ]
+
+    # the segment lengths to split the video into
+    segmentLenghts = [1, 2]
+
+    # the codecs to consider  
+    codecs = ['hevc']
+
+    # target resolutions to transcode the segments to 
+    targetResolutions = [
+        '3840x2160',
+        '1920x1080',
+        '1280x720',
+        '1024x576',
+        '640x360'
+    ]
+
+    # the absolute path where the encoded videos should be stored
+    # Change according to your paths
+    encodedVideoDirectoryPath = '/home/ubuntu/Documents/VideosDataset/EncodedSegments'
+
+    # the absolute results path 
+    # Change according to your paths
+    resultsDirectoryPath = '/home/ubuntu/Documents/VideosDataset/Results'
+
+    # the results file name
+    resultsFile = 'result.csv'
+
+    # Raw Segments directory path 
+    # Raw directory segments is where the raw splitted segmenst will go to. This is cleaned after the encoding completes
+    # Change according to your paths
+    rawSegmentsDirectoryPath = '/home/ubuntu/Documents/VideosDataset/RawSegments'
+
+    # crf values to consider 
+    # valid value: 1 to 51 
+    crfValues = [16,18,20,22,24,26,28]
+
+    # the preset to use
+    # valid values: ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow, placebo
+    preset = 'ultrafast'
+
+    # the tune to use
+    # valid values: psnr, ssim, grain, fastdecode, zerolatency, animation
+    tune = 'zerolatency'
+    ```
+- Run the script (`script.py`)
+    ```
+    python3 script.py
+    ```
+- The Resultant segments will be stored in the `encodedVideoDirectoryPath` and resultant CSV file in `resultsDirectoryPath`
 
 ## Docker 
 Add Implementation details for Docker
