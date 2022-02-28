@@ -4,7 +4,7 @@ The dataset is availabe [here](https://drive.google.com/drive/folders/1PHBWy-Gq6
 # HEVC Dataset
 This repository contains the HEVC dataset comprising of 1 second and 2 second long segments (suitable for low latency applications) as well as the tool to generate HEVC encoded segments using CRF as the rate control mode. 
 
-## Requiremnet
+## Requirement
 - Python (3.6 or higher)
 - FFmpeg 
 - FFmpeg Quality Metrics (https://github.com/slhck/ffmpeg-quality-metrics.git)

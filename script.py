@@ -4,10 +4,7 @@ This script splits a y4m file into smaller y4m segments and encodes the segments
 bitrate, psnr, ssim, vmaf
 """
 
-from copyreg import constructor
 import os
-
-from click import command
 from config import *
 import subprocess
 import time
@@ -57,12 +54,12 @@ class videoEncoder:
         videoStats = self.getEncodedVideoStats(encodedVideoPath)
         qualityMetrics = self.getQualityMetrics(referenceVideoPath, encodedVideoPath)
         stats = {**videoStats, **qualityMetrics, 'transcodingTime':transcodingTime}
-        print(stats)
+        # print(stats)
         return(stats)
 
     def writeDataToCsv(self, name, duration, fps, sourceResolution, targetResolution, stats):
         arr = [name, duration, fps, sourceResolution, targetResolution]
-        print(stats)
+        # print(stats)
         for crfStats in stats:
             for k, v in crfStats.items():
                 arr.append(v['transcodingTime'])
@@ -189,7 +186,6 @@ for duration in segmentLenghts:
         # segments = segments[0:1] # comment later 
         videoObject = videoEncoder(videoName,segments,segmentDirectoryPath,duration,videoResolution)
         videoObject.encode()
-
 
         # Remove the videoDirectory of split y4m to save space 
         removeDirectoryContents(rawSegmentsDirectoryPath)
