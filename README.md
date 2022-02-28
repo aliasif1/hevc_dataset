@@ -77,7 +77,7 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
 - The Resultant segments will be stored in the `encodedVideoDirectoryPath` and resultant CSV file in `resultsDirectoryPath`
 
 ## Docker 
-Add Implementation details for Docker
+Coming Soon
 
 ## OurDataset
 For generating our dataset we used 11 videos from the UVG dataset. The videos selected are
