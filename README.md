@@ -84,7 +84,7 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
     ```
 - or Download the image from dockerhub 
     ```
-    docker image pull "Coming Soon"
+    docker image pull aliasifm/rate_control_dataset
     ```
 - configuration File (`config_docker.py`) - The Configuration file contains the transcoding parameters. Please update the paths and the parameters in the config file before executing the script. NOTE: The mount directory inside the container has to be /app. do not change that 
     ```
