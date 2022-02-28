@@ -86,7 +86,7 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
     ```
     docker image pull "Coming Soon"
     ```
-- configuration File (`config_docker.py`) - The Configuration file contains the transcoding parameters. Please update the paths and the parameters in the config file before executing the script. 
+- configuration File (`config_docker.py`) - The Configuration file contains the transcoding parameters. Please update the paths and the parameters in the config file before executing the script. NOTE: The mount directory inside the container has to be /app. do not change that 
     ```
     # List of Video Dictionery 
     # Each Dictionery is a y4m Video which needs to be segmented and converted to HEVC 
@@ -139,6 +139,8 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
     # valid values: psnr, ssim, grain, fastdecode, zerolatency, animation
     tune = 'zerolatency'
     ```
+- Create a mount directory (say /mount) and copy the "config_docker.py" file and all the y4m video files which needs to be transcoded to to mount directory.
+
 - Run the script (`script_docker.py`) from a container 
     ```
     docker container run --rm --mount type=bind,source=/mount,target=/app myimg
