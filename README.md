@@ -76,10 +76,77 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
     ```
 - The Resultant segments will be stored in the `encodedVideoDirectoryPath` and resultant CSV file in `resultsDirectoryPath`
 
-## Docker 
-Coming Soon
+# Docker 
+## Usage
+- build the docker image
+    ```
+    docker image build -t myimg .
+    ```
+- or Download the image from dockerhub 
+    ```
+    docker image pull "Coming Soon"
+    ```
+- configuration File (`config_docker.py`) - The Configuration file contains the transcoding parameters. Please update the paths and the parameters in the config file before executing the script. 
+    ```
+    # List of Video Dictionery 
+    # Each Dictionery is a y4m Video which needs to be segmented and converted to HEVC 
+    videos = [
+        {
+            'name':'twilight3', # What name the segments should be.
+            'path': '/app/Twilight_3840x2160_50fps_420_8bit_YUV_RAW/ # the mount path on the container has to be /app. Twilight_3840x2160_50fps_8bit.y4m', # Absolute path of the video file
+            'resolution': '3840x2160' # Resolution of the video
+        },
+    ]
 
-## OurDataset
+    # the segment lengths to split the video into
+    segmentLenghts = [1, 2]
+
+    # the codecs to consider  
+    codecs = ['hevc']
+
+    # target resolutions to transcode the segments to 
+    targetResolutions = [
+        '3840x2160',
+        '1920x1080',
+        '1280x720',
+        '1024x576',
+        '640x360'
+    ]
+
+    # Path where the encoded videos should be stored
+    encodedVideoDirectoryPath = '/app/EncodedSegments'
+
+    # Results path 
+    # Change according to your paths
+    resultsDirectoryPath = '/app/Results'
+
+    # the results file name
+    resultsFile = 'result.csv'
+
+    # Raw Segments directory path 
+    # Raw directory segments is where the raw splitted segmenst will go to. This is cleaned after the encoding completes
+    rawSegmentsDirectoryPath = '/app/RawSegments'
+
+    # crf values to consider 
+    # valid value: 1 to 51 
+    crfValues = [16,18,20,22,24,26,28]
+
+    # the preset to use
+    # valid values: ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow, placebo
+    preset = 'ultrafast'
+
+    # the tune to use
+    # valid values: psnr, ssim, grain, fastdecode, zerolatency, animation
+    tune = 'zerolatency'
+    ```
+- Run the script (`script_docker.py`) from a container 
+    ```
+    docker container run --rm --mount type=bind,source=/mount,target=/app myimg
+    ```
+- The Resultant segments will be stored in the `encodedVideoDirectoryPath` and resultant CSV file in `resultsDirectoryPath` inside the mount folder 
+
+
+# OurDataset
 For generating our dataset we used 11 videos from the UVG dataset. The videos selected are
 |     Video    |    Creator   | Resolution | FPS | Bitrate (kbps) |   Codec   | Duration (Seconds) | # 1 Second  Segments  | # 2 Second  Segments  |
 |:------------:|:------------:|:----------:|:---:|:--------------:|:---------:|:------------------:|:---------------------:|:---------------------:|
