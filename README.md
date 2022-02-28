@@ -94,3 +94,9 @@ For generating our dataset we used 11 videos from the UVG dataset. The videos se
 |  Flower Kids | UVG Dataset  |  3840x2160 |  50 |     4976642    | YUV 4:2:0 |         12         |           12          |           6           |
 | Flower Focus | UVG Dataset  |  3840x2160 |  50 |     4976642    | YUV 4:2:0 |         12         |           12          |           6           |
 | River Bank   | UVG Dataset  |  3840x2160 |  50 |     4976642    | YUV 4:2:0 |         12         |           12          |           6           |
+
+
+
+## Acknowledgements
+- FFmpeg Quality Metrics (https://github.com/slhck/ffmpeg-quality-metrics.git)
+- SITI (Spatial Information / Temporal Information) (https://github.com/slhck/siti.git)
