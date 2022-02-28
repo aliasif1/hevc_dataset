@@ -1,8 +1,10 @@
+# The mount directory has to be /app. Do not change that 
+
 # dictionery of video name and its location 
 videos = [
     {
         'name':'yacht_ride',
-        'path': '/app/YachtRide_3840x2160.y4m',
+        'path': '/app/YachtRide_3840x2160.y4m', #inside the container
         'resolution': '3840x2160'
     }
 ]
@@ -26,16 +28,16 @@ targetResolutions = [
 crfValues = [16,18,20,22,24,26,28]
 
 
-# the absolute path where the encoded videos should be stored
+# the path inside the container where the encoded videos should be stored
 encodedVideoDirectoryPath = '/app/EncodedSegments'
 
-# the absolute results path 
+# the results path inside the container
 resultsDirectoryPath = '/app/Results'
 
 # the results file name
 resultsFile = 'Result.csv'
 
-# Raw Segments directory. Wheret the raw split segmnets will go to
+# Raw Segments directory inside the container. Where the raw split segmnets will go to
 rawSegmentsDirectoryPath = '/app/RawSegments'
 
 # preset

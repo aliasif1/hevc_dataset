@@ -93,7 +93,7 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
     videos = [
         {
             'name':'twilight3', # What name the segments should be.
-            'path': '/app/Twilight_3840x2160_50fps_420_8bit_YUV_RAW/ # the mount path on the container has to be /app. Twilight_3840x2160_50fps_8bit.y4m', # Absolute path of the video file
+            'path': '/app/Twilight_3840x2160_50fps_420_8bit_YUV_RAW/ # the mount path on the container has to be /app. Twilight_3840x2160_50fps_8bit.y4m', # path of the video file inside the container
             'resolution': '3840x2160' # Resolution of the video
         },
     ]
@@ -113,17 +113,17 @@ This repository contains the HEVC dataset comprising of 1 second and 2 second lo
         '640x360'
     ]
 
-    # Path where the encoded videos should be stored
+    # Path inside the container where the encoded videos should be stored
     encodedVideoDirectoryPath = '/app/EncodedSegments'
 
-    # Results path 
+    # Results path inside the container
     # Change according to your paths
     resultsDirectoryPath = '/app/Results'
 
     # the results file name
     resultsFile = 'result.csv'
 
-    # Raw Segments directory path 
+    # Raw Segments directory path inside the container
     # Raw directory segments is where the raw splitted segmenst will go to. This is cleaned after the encoding completes
     rawSegmentsDirectoryPath = '/app/RawSegments'
 
