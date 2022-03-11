@@ -175,9 +175,7 @@ The videos selected are:
 - SITI (Spatial Information / Temporal Information) (https://github.com/slhck/siti.git)
 
 ## License
-MIT License
-
-HEVC Dataset, Copyright (c) 2022 Asif Ali Mehmuda
+hevc_dataset, Copyright (c) 2022 Asif Ali Mehmuda
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
