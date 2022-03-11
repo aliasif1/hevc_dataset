@@ -173,6 +173,8 @@ The videos selected are:
 ## Acknowledgements (Licenses attached)
 - FFmpeg Quality Metrics (https://github.com/slhck/ffmpeg-quality-metrics.git)
 - SITI (Spatial Information / Temporal Information) (https://github.com/slhck/siti.git)
+- FFMPEG Static Builds (https://johnvansickle.com/ffmpeg/)
+- FFMPEG (https://ffmpeg.org/)
 
 ## License
 hevc_dataset, Copyright (c) 2022 Asif Ali Mehmuda
