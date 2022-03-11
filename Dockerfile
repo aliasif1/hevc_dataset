@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-# Some parts taken from https://github.com/slhck/ffmpeg-quality-metrics.git
+# Acknowledgements: https://github.com/slhck/ffmpeg-quality-metrics.git
 RUN apt-get update -qq -y && apt-get install -qq -y \
   wget \
   xz-utils \
