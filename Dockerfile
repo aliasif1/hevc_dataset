@@ -1,6 +1,8 @@
 FROM python:3.9-slim
 
 # Acknowledgements: https://github.com/slhck/ffmpeg-quality-metrics.git
+# Acknowledgements: https://johnvansickle.com/ffmpeg/
+
 RUN apt-get update -qq -y && apt-get install -qq -y \
   wget \
   xz-utils \
