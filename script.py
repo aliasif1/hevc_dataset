@@ -32,8 +32,8 @@ class videoEncoder:
                 for crf in crfValues:
                     referenceVideoPath = f'{self.segmentDirectoryPath}/{segment}'
                     encodedVideoPath = f'{encodedVideoDirectoryPath}/{self.videoName}/{self.videoResolution}/{self.duration}sec/{resolution}/{crf}_crf/{encodedSegmentName}'
-                    print(f'**Encoding {duration}sec {segment} -> {encodedSegmentName} at {resolution}')
-                    command = f'ffmpeg -i {referenceVideoPath} -c:v libx265 -preset {preset} -tune {tune}  -crf {crf} -vf scale={resolution} -pix_fmt yuv420p  {encodedVideoPath} >/dev/null 2>&1'
+                    print(f'**Encoding {duration}sec {segment} -> {encodedSegmentName} at {resolution} with CRF {crf}')
+                    command = f'ffmpeg -i {referenceVideoPath} -c:v {CODECLIBRARY} -preset {preset} -tune {tune}  -crf {crf} -vf scale={resolution} -pix_fmt yuv420p  {encodedVideoPath} >/dev/null 2>&1'
                     # print(command);
                     startTime = time.time()         
                     subprocess.call(command, shell=True)
@@ -148,6 +148,13 @@ def appendCSV(csvPath, data):
 
 #Driver code
 
+# The ffmpeg Library/codec to use
+CODECLIBRARY = None
+if codec == 'hevc':
+    CODECLIBRARY = 'libx265'
+elif codec == 'avc':
+    CODECLIBRARY = 'libx264'
+
 # configurations
 # Check that the raw segment directory exists
 createDirectory(rawSegmentsDirectoryPath)
@@ -183,7 +190,7 @@ for duration in segmentLenghts:
         isLastSegmentValid = checkLastSegment(segmentDirectoryPath, segments[-1], duration)
         if not isLastSegmentValid:
             segments = segments[:-1] # Exclude the last segment
-        # segments = segments[0:1] # comment later 
+        segments = segments[0:1] # comment later 
         videoObject = videoEncoder(videoName,segments,segmentDirectoryPath,duration,videoResolution)
         videoObject.encode()
 

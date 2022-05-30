@@ -15,8 +15,9 @@ videos = [
 # the segment length to split the video into
 segmentLenghts = [1, 2]
 
-# the codecs to consider  
-codecs = ['hevc']
+# the codec to consider
+# valid values: avc, hevc   
+codec = 'hevc' 
 
 # target resolutions to consider 
 targetResolutions = [
