@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:mpeg:dash:schema:mpd:2011"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd"
+	profiles="urn:mpeg:dash:profile:isoff-live:2011"
+	type="static"
+	mediaPresentationDuration="PT10.0S"
+	maxSegmentDuration="PT5.0S"
+	minBufferTime="PT10.0S">
+	<ProgramInformation>
+	</ProgramInformation>
+	<ServiceDescription id="0">
+	</ServiceDescription>
+	<Period id="0" start="PT0.0S">
+		<AdaptationSet id="0" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,0,0,1,1,4,4"/>
+			<Representation id="0" mimeType="video/mp4" codecs="hev1" bandwidth="23744" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="1" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="32471040/1082399" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,0,1,1,1,4,4"/>
+			<Representation id="1" mimeType="video/mp4" codecs="hev1" bandwidth="35502" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="13" />
+						<S d="7199" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="2" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,0,2,1,1,4,4"/>
+			<Representation id="2" mimeType="video/mp4" codecs="hev1" bandwidth="42503" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="3" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,0,3,1,1,4,4"/>
+			<Representation id="3" mimeType="video/mp4" codecs="hev1" bandwidth="45769" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="4" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,1,0,1,1,4,4"/>
+			<Representation id="4" mimeType="video/mp4" codecs="hev1" bandwidth="17567" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="5" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,1,1,1,1,4,4"/>
+			<Representation id="5" mimeType="video/mp4" codecs="hev1" bandwidth="64037" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="6" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,1,2,1,1,4,4"/>
+			<Representation id="6" mimeType="video/mp4" codecs="hev1" bandwidth="55084" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="7" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,1,3,1,1,4,4"/>
+			<Representation id="7" mimeType="video/mp4" codecs="hev1" bandwidth="64037" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="8" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,2,0,1,1,4,4"/>
+			<Representation id="8" mimeType="video/mp4" codecs="hev1" bandwidth="19502" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="9" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,2,1,1,1,4,4"/>
+			<Representation id="9" mimeType="video/mp4" codecs="hev1" bandwidth="89593" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="10" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,2,2,1,1,4,4"/>
+			<Representation id="10" mimeType="video/mp4" codecs="hev1" bandwidth="30433" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="11" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,2,3,1,1,4,4"/>
+			<Representation id="11" mimeType="video/mp4" codecs="hev1" bandwidth="30910" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="12" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,3,0,1,1,4,4"/>
+			<Representation id="12" mimeType="video/mp4" codecs="hev1" bandwidth="17466" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="13" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,3,1,1,1,4,4"/>
+			<Representation id="13" mimeType="video/mp4" codecs="hev1" bandwidth="54069" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="14" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,3,2,1,1,4,4"/>
+			<Representation id="14" mimeType="video/mp4" codecs="hev1" bandwidth="15502" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="15" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="30/1" maxWidth="240" maxHeight="134" par="135:67" lang="und">
+			<SupplementalProperty schemeIdUri="urn:mpeg:dash:srd:2014" value="0,3,3,1,1,4,4"/>
+			<Representation id="15" mimeType="video/mp4" codecs="hev1" bandwidth="18087" width="240" height="134" sar="9:8">
+				<SegmentTemplate timescale="15360" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="76800" r="1" />
+						<S d="1024" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+	</Period>
+</MPD>
