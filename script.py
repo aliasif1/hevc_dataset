@@ -4,6 +4,7 @@ This script splits a y4m file into smaller y4m segments and encodes the segments
 bitrate, psnr, ssim, vmaf
 """
 
+import code
 import os
 from config import *
 import subprocess
@@ -32,9 +33,12 @@ class videoEncoder:
                 for crf in crfValues:
                     referenceVideoPath = f'{self.segmentDirectoryPath}/{segment}'
                     encodedVideoPath = f'{encodedVideoDirectoryPath}/{self.videoName}/{self.videoResolution}/{self.duration}sec/{resolution}/{crf}_crf/{encodedSegmentName}'
-                    print(f'**Encoding {duration}sec {segment} -> {encodedSegmentName} at {resolution} with CRF {crf}')
-                    command = f'ffmpeg -i {referenceVideoPath} -c:v {CODECLIBRARY} -preset {preset} -tune {tune}  -crf {crf} -vf scale={resolution} -pix_fmt yuv420p  {encodedVideoPath} >/dev/null 2>&1'
-                    # print(command);
+                    print(f'**Encoding ({codec}) {duration}sec {segment} -> {encodedSegmentName} at {resolution} with CRF {crf}')
+                    command = ''
+                    if codec in ['avc', 'hevc']:
+                        command = f'ffmpeg -i {referenceVideoPath} -c:v {CODECLIBRARY} -preset {preset} -tune {tune}  -crf {crf} -vf scale={resolution} -pix_fmt yuv420p  {encodedVideoPath} >/dev/null 2>&1'
+                    elif codec == 'av1':
+                        command = f'ffmpeg -i {referenceVideoPath} -c:v {CODECLIBRARY} -crf {crf} -b:v 0 -vf scale={resolution} -pix_fmt yuv420p -cpu-used {cpuUsed} {encodedVideoPath} >/dev/null 2>&1'                
                     startTime = time.time()         
                     subprocess.call(command, shell=True)
                     timeElapsed = time.time() - startTime
@@ -154,6 +158,8 @@ if codec == 'hevc':
     CODECLIBRARY = 'libx265'
 elif codec == 'avc':
     CODECLIBRARY = 'libx264'
+elif codec == 'av1':
+    CODECLIBRARY = 'libaom-av1'
 
 # configurations
 # Check that the raw segment directory exists
