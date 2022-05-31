@@ -80,22 +80,9 @@ segmentLenghts = [1,2]
 # tile dimension to split in
 tileDim = [2,4] #example (2x2) , (4x4)
 
-#parallelism options required:
-
-#keep it more than zero
-slices=1
-
-#wpp enable :1/ disable:0 
-wpp=1
-
-#frame threads required with X265_MAX_FRAME_THREADS i.e, 16
-frameThreads=16
-
-#pools equals system number of threads
-pools=16
-
-# the codecs to consider  
-codecs = ['hevc']
+# the codec to consider
+# valid values: avc, hevc, av1   
+codec = 'hevc'
 
 # target resolutions to consider 
 targetResolutions = {
@@ -104,7 +91,9 @@ targetResolutions = {
         '960':'540'
         }
 
-# crf values to consider 
+# crf values to consider
+# valid range [0-51] for avc and hevc
+# Valid range [0-63] for av1
 crfValues = [16,18,20,22,24,26,28]
 
 
@@ -121,7 +110,14 @@ resultsFile = 'ResultTiledFinal.csv'
 rawSegmentsDirectoryPath = 'RawSegments'
 
 # preset
+# only used for avc and hevc 
 preset = 'ultrafast'
 
 # tune
+# only used for avc and hevc
 tune = 'zerolatency'
+
+# cpu-used 
+# only used for av1
+# valid value range [0-8]
+cpuUsed=8

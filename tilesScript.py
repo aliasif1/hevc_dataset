@@ -56,7 +56,11 @@ class videoEncoder:
                         for crf in crfValues:
                             referenceVideoPath = f'{self.rawSegmentsOutputPath}/{dimension}tileDim/{resolution}/{tile}'
                             encodedVideoPath = f'{encodedVideoDirectoryPath}/{self.videoName}/{self.videoResolution}/{self.duration}sec/{dimension}tileDim/{resolution}/{crf}_crf/{tile}'
-                            command=f'ffmpeg -y -i {referenceVideoPath}  -vcodec libx265  -preset {preset} -tune {tune} -crf {crf} -x265-params frame-threads={frameThreads}:slices={slices}:wpp={wpp}:pools={pools} -pix_fmt yuv420p {encodedVideoPath} >/dev/null 2>&1'
+                            if codec in ['avc', 'hevc']:
+                                command = f'ffmpeg -i {referenceVideoPath} -c:v {CODECLIBRARY} -preset {preset} -tune {tune}  -crf {crf} -pix_fmt yuv420p  {encodedVideoPath} >/dev/null 2>&1'
+                            elif codec == 'av1':
+                                command = f'ffmpeg -i {referenceVideoPath} -c:v {CODECLIBRARY} -crf {crf} -b:v 0 -pix_fmt yuv420p -cpu-used {cpu} {encodedVideoPath} >/dev/null 2>&1'
+                            #command=f'ffmpeg -y -i {referenceVideoPath}  -vcodec libx265  -preset {preset} -tune {tune} -crf {crf} -x265-params frame-threads={frameThreads}:slices={slices}:wpp={wpp}:pools={pools} -pix_fmt yuv420p {encodedVideoPath} >/dev/null 2>&1'
                             print(f'**Encoding {duration}sec {tile} at CRF: {crf}')
                             #print(command)
                             startTime = time.time()         
@@ -184,6 +188,13 @@ def appendCSV(csvPath, data):
         f.write(f'{data}\n')
 
 #Driver code
+CODECLIBRARY = None
+if codec == 'hevc':
+    CODECLIBRARY = 'libx265'
+elif codec == 'avc':
+    CODECLIBRARY = 'libx264'
+elif codec == 'av1':
+    CODECLIBRARY = 'libaom-av1'
 
 # configurations
 # Check that the raw segment directory exists
